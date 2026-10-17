@@ -11,6 +11,7 @@
     <h1>TANGOMU RUSH</h1>
     <button id="startButton" onclick="startGame()">ゲームスタート</button>
     <p>残り時間：<span id="timer">60</span>秒</p>
+    <p>スコア：<span id="score">0</span></p>
     <div id="letterBoard"></div>
     <p id="sequenceMessage">まず「t」を押そう！</p>
     <p>押した文字：<span id="tappedLetter">まだ押されていない</span></p>
@@ -36,6 +37,8 @@
                         if (nextLetterIndex === letters.length) {
                             document.getElementById("sequenceMessage").textContent = "1セット完成！";
                             nextLetterIndex = 0;
+                            score++;
+                            document.getElementById("score").textContent = score;
                         } else {
                             document.getElementById("sequenceMessage").textContent = 
                                 "正解！次は「" + letters[nextLetterIndex] + "」";
@@ -50,11 +53,14 @@
         }
 
         let nextLetterIndex = 0;
+        let score = 0;
         
         function startGame() {
             let timeLeft = 60;
             document.getElementById("startButton").disabled = true;
             nextLetterIndex = 0;
+            score = 0;
+            document.getElementById("score").textContent = score;
             createCards();
 
             document.getElementById("timer").textContent = timeLeft;
