@@ -46,7 +46,10 @@
                     } else {
                         document.getElementById("sequenceMessage").textContent =
                             "順番ちがう！次は「" + letters[nextLetterIndex] + "」";
+                        timeLeft = timeLeft - 1;
+                        document.getElementById("timer").textContent = timeLeft;
                     }
+                    
                 };
                 board.appendChild(card);
             }
