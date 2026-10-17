@@ -64,11 +64,15 @@
         let score = 0;
         let timeLeft = 60;
         let countdown;
+        let gameEnded = 0; /*ゲームが終わってなければ0、終わってたら1*/
 
         function endGame() {
-            clearInterval(countdown);
-            document.getElementById("startButton").disabled = false;
-            alert("時間切れ！");
+            if (gameEnded == 0) {
+                clearInterval(countdown);
+                document.getElementById("startButton").disabled = false;
+                alert("時間切れ！");
+                gameEnded = 1;
+            }
         }
         
         function startGame() {
@@ -76,6 +80,7 @@
             nextLetterIndex = 0;
             score = 0;
             timeLeft = 60;
+            gameEnded = 0;
             document.getElementById("score").textContent = score;
             createCards();
 
