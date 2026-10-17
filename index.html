@@ -65,19 +65,22 @@
             document.getElementById("startButton").disabled = true;
             nextLetterIndex = 0;
             score = 0;
+            timeLeft = 60;
             document.getElementById("score").textContent = score;
             createCards();
 
             document.getElementById("timer").textContent = timeLeft;
 
             const countdown = setInterval(function() {
+                if (timeLeft <= 0) {
+                    clearInterval(countdown);
+                    document.getElementById("startButton").disabled = false;
+                    alert("時間切れ！");
+                }
                 timeLeft = timeLeft - 1;
                 document.getElementById("timer").textContent = timeLeft;
             }, 1000);
-        if (timeLeft <= 0) {
-            clearInterval(countdown);
-            document.getElementById("startButton").disabled = false;
-            alert("時間切れ！");
+
         }
     </script>
 </body>
