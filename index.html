@@ -71,13 +71,15 @@
             document.getElementById("timer").textContent = timeLeft;
 
             const countdown = setInterval(function() {
-                timeLeft = timeLeft - 1;
-                document.getElementById("timer").textContent = timeLeft;
-
                 if (timeLeft <= 0) {
                     clearInterval(countdown);
                     document.getElementById("startButton").disabled = false;
                     alert("時間切れ！");
+                }
+                timeLeft = timeLeft - 1;
+                document.getElementById("timer").textContent = timeLeft;
+
+                
                 }
             }, 1000);
         }
