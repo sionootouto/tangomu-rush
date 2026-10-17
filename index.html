@@ -64,11 +64,11 @@
         let score = 0;
         let timeLeft = 60;
         let countdown;
-        let gameEnded = 0; /*ゲームが終わってなければ0、終わってたら1*/
+        let gameEnded = false; /*ゲームが終わってなければfalse, 終わってたらtrue*/
 
         function endGame() {
-            if (gameEnded == 0) {
-                gameEnded = 1;
+            if (gameEnded === false) {
+                gameEnded = true;
                 clearInterval(countdown);
                 document.getElementById("startButton").disabled = false;
                 alert("時間切れ！");
