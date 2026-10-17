@@ -67,7 +67,7 @@
         let gameEnded = false; /*ゲームが終わってなければfalse, 終わってたらtrue*/
 
         function endGame() {
-            if (gameEnded === false) {
+            if (!gameEnded) {
                 gameEnded = true;
                 clearInterval(countdown);
                 document.getElementById("startButton").disabled = false;
