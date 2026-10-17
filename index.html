@@ -44,10 +44,12 @@
                                 "正解！次は「" + letters[nextLetterIndex] + "」";
                         }
                     } else {
-                        document.getElementById("sequenceMessage").textContent =
-                            "順番ちがう！次は「" + letters[nextLetterIndex] + "」";
-                        timeLeft = timeLeft - 1;
-                        document.getElementById("timer").textContent = timeLeft;
+                        if (timeLeft > 0) {
+                          document.getElementById("sequenceMessage").textContent =
+                              "順番ちがう！次は「" + letters[nextLetterIndex] + "」";
+                          timeLeft = timeLeft - 1;
+                          document.getElementById("timer").textContent = timeLeft;  
+                        }
                     }
                     
                 };
