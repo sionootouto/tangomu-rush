@@ -11,6 +11,7 @@
     <h1>TANGOMU RUSH</h1>
     <button id="startButton" onclick="startGame()">ゲームスタート</button>
     <p>残り時間：<span id="timer">60</span>秒</p>
+    <div id="letterBoard"></div>
     <script>
         function createCards() {
             const letters = ["t", "a", "n", "g", "o", "m", "u"];
@@ -30,6 +31,7 @@
         function startGame() {
             let timeLeft = 60;
             document.getElementById("startButton").disabled = true;
+            createCards();
 
             document.getElementById("timer").textContent = timeLeft;
 
