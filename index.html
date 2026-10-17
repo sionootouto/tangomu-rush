@@ -54,6 +54,7 @@
         function startGame() {
             let timeLeft = 60;
             document.getElementById("startButton").disabled = true;
+            nextLetterIndex = 0;
             createCards();
 
             document.getElementById("timer").textContent = timeLeft;
