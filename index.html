@@ -27,37 +27,41 @@
 
                 card.textContent = letters[i];
                 card.onclick = function() {
-                    const tapped = letters[i]
-                    
-                    document.getElementById("tappedLetter").textContent = tapped;
-
-                    if (tapped === letters[nextLetterIndex]) {
-                        nextLetterIndex++;
-
-                        if (nextLetterIndex === letters.length) {
-                            document.getElementById("sequenceMessage").textContent = "1セット完成！";
-                            nextLetterIndex = 0;
-                            score++;
-                            document.getElementById("score").textContent = score;
-                        } else {
-                            document.getElementById("sequenceMessage").textContent = 
-                                "正解！次は「" + letters[nextLetterIndex] + "」";
-                        }
+                    if (gameEnded) {
+                        return 0;
                     } else {
-                        if (timeLeft > 0) {
-                          document.getElementById("sequenceMessage").textContent =
-                              "順番ちがう！次は「" + letters[nextLetterIndex] + "」";
-                          timeLeft = timeLeft - 1;
-                          document.getElementById("timer").textContent = timeLeft;  
-                          if (timeLeft <= 0) {
-                              endGame();
-                          }
-                        }
-                    }
+                        const tapped = letters[i]
                     
-                };
-                board.appendChild(card);
-            }
+                        document.getElementById("tappedLetter").textContent = tapped;
+
+                        if (tapped === letters[nextLetterIndex]) {
+                            nextLetterIndex++; 
+
+                            if (nextLetterIndex === letters.length) {
+                                document.getElementById("sequenceMessage").textContent = "1セット完成！";
+                                nextLetterIndex = 0;
+                                score++;
+                                document.getElementById("score").textContent = score;
+                            } else {
+                                document.getElementById("sequenceMessage").textContent = 
+                                    "正解！次は「" + letters[nextLetterIndex] + "」";
+                            }
+                        } else {
+                            if (timeLeft > 0) {
+                              document.getElementById("sequenceMessage").textContent =
+                                  "順番ちがう！次は「" + letters[nextLetterIndex] + "」";
+                              timeLeft = timeLeft - 1;
+                              document.getElementById("timer").textContent = timeLeft;  
+                              if (timeLeft <= 0) {
+                                  endGame();
+                              }
+                            }
+                        }
+                    
+                    };
+                    board.appendChild(card);
+                }
+             }
         }
 
         let nextLetterIndex = 0;
