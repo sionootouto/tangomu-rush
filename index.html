@@ -14,6 +14,7 @@
     <script>
         function startGame() {
             let timeLeft = 60;
+            document.getElementById("startButton").disabled = true;
 
             document.getElementById("timer").textContent = timeLeft;
 
@@ -23,6 +24,7 @@
 
                 if (timeLeft <= 0) {
                     clearInterval(countdown);
+                    document.getElementById("startButton").disabled = false;
                     alert("時間切れ！");
                 }
             }, 1000);
