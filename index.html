@@ -12,6 +12,21 @@
     <button id="startButton" onclick="startGame()">ゲームスタート</button>
     <p>残り時間：<span id="timer">60</span>秒</p>
     <script>
+        function createCards() {
+            const letters = ["t", "a", "n", "g", "o", "m", "u"];
+
+            const board = document.getElementById("letterBoard");
+            board.textContent = "";
+
+            for (let i = 0; i < letters.length; i++) {
+                const card = document.createElement("button");
+
+                card.textContent = letters[i];
+
+                board.appendChild(card);
+            }
+        }
+        
         function startGame() {
             let timeLeft = 60;
             document.getElementById("startButton").disabled = true;
