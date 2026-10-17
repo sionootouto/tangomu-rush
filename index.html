@@ -68,10 +68,10 @@
 
         function endGame() {
             if (gameEnded == 0) {
+                gameEnded = 1;
                 clearInterval(countdown);
                 document.getElementById("startButton").disabled = false;
                 alert("時間切れ！");
-                gameEnded = 1;
             }
         }
         
