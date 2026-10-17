@@ -13,8 +13,19 @@
     <p>残り時間：<span id="timer">60</span>秒</p>
     <script>
         function startGame() {
-            alert("ゲームスタート！");
-        }
+            let timeLeft = 60;
+
+            document.getElenmentById("timer").textContent = timeLeft;
+
+            const countdown = setInterval(function() {
+                timeLeft = timeLeft - 1;
+                document.getElementById("timer").textContent = timeLeft;
+
+                if (timeLeft <= 0) {
+                    clearInterval(countdown);
+                    alert("時間切れ！");
+                }
+        }, 1000);
     </script>
 </body>
 </html>
