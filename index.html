@@ -25,7 +25,7 @@
             for (let i = 0; i < letters.length; i++) {
                 const card = document.createElement("button");
 
-                card.textContent = letters[math.random() * 7];
+                card.textContent = letters[i];
                 
                 card.onclick = function() {
                     if (gameEnded) {
