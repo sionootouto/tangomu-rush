@@ -52,6 +52,7 @@
                                 nextLetterIndex = 0;
                                 score++;
                                 document.getElementById("score").textContent = score;
+                                createCards();
                             } else {
                                 document.getElementById("sequenceMessage").textContent = 
                                     "正解！次は「" + letters[nextLetterIndex] + "」";
