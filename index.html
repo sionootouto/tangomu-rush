@@ -20,11 +20,11 @@
             const letters = ["t", "a", "n", "g", "o", "m", "u"];
             const shuffledLetters[...length];
 
-            for (let i = 0; i < letters.length; i++) {
-                let tmp = Math.floor(math.random() * letters.length);
-                shuffledLetters[i] = 
-                
-                
+            for (let i = 0; i < shuffledLetters.length; i++) {
+                let random = Math.floor(math.random() * letters.length);
+                let tmp = random;
+                shuffledLetters[random] = shuffledLetters[i];
+                shuffledLetters[i] = shuffledLetters[tmp];    
             }
 
             const board = document.getElementById("letterBoard");
@@ -33,13 +33,13 @@
             for (let i = 0; i < letters.length; i++) {
                 const card = document.createElement("button");
 
-                card.textContent = letters[i];
+                card.textContent = shuffledLetters[i];
                 
                 card.onclick = function() {
                     if (gameEnded) {
                         return;
                     } else {
-                        const tapped = letters[i]
+                        const tapped = shuffledLetters[i]
                     
                         document.getElementById("tappedLetter").textContent = tapped;
 
