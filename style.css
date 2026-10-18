@@ -30,4 +30,9 @@ button {
   font-weight: bold;
 }
 
+.correct {
+  transform: scale(0);
+  transition: transform 0.2s;
+}
+
   
