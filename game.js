@@ -14,7 +14,6 @@ function createCards() {
 
     for (let i = 0; i < letters.length; i++) {
         const card = document.createElement("button");
-        card.classList.add('btn');
 
         card.textContent = shuffledLetters[i];
                 
@@ -39,6 +38,7 @@ function createCards() {
                     } else {
                         document.getElementById("sequenceMessage").textContent = 
                             "正解！次は「" + letters[nextLetterIndex] + "」";
+                        card.classList.add("correct");
 
                         board.removeChild(card);
                     }
