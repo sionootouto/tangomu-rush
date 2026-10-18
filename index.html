@@ -25,7 +25,8 @@
             for (let i = 0; i < letters.length; i++) {
                 const card = document.createElement("button");
 
-                card.textContent = letters[i];
+                card.textContent = letters[math.random() * 7];
+                
                 card.onclick = function() {
                     if (gameEnded) {
                         return;
@@ -60,6 +61,7 @@
                     
                     }
                 };
+                
                 board.appendChild(card);
                 
             }
