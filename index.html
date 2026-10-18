@@ -54,6 +54,8 @@
                             } else {
                                 document.getElementById("sequenceMessage").textContent = 
                                     "正解！次は「" + letters[nextLetterIndex] + "」";
+
+                                board.removeChild(card);
                             }
                         } else {
                             if (timeLeft > 0) {
