@@ -47,6 +47,7 @@
                             nextLetterIndex++; 
 
                             if (nextLetterIndex === letters.length) {
+                                board.removeChild(card);
                                 document.getElementById("sequenceMessage").textContent = "1セット完成！";
                                 nextLetterIndex = 0;
                                 score++;
