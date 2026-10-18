@@ -20,8 +20,8 @@
             const letters = ["t", "a", "n", "g", "o", "m", "u"];
             const shuffledLetters = [...letters];
 
-            for (let i = 0; i < shuffledLetters.length; i++) {
-                let random = Math.floor(Math.random() * letters.length);
+            for (let i = shuffledLetters.length - 1; i >= 0; i--) {
+                let random = Math.floor(Math.random() * (i + 1));
                 let tmp = shuffledLetters[random];
                 shuffledLetters[random] = shuffledLetters[i];
                 shuffledLetters[i] = tmp;
