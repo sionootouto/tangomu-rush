@@ -22,10 +22,9 @@
 
             for (let i = 0; i < shuffledLetters.length; i++) {
                 let random = Math.floor(Math.random() * letters.length);
-                let tmp[];
-                tmp[0] = shuffledLetters[random];
+                let tmp = shuffledLetters[random];
                 shuffledLetters[random] = shuffledLetters[i];
-                shuffledLetters[i] = tmp[0];
+                shuffledLetters[i] = tmp;
             }
 
             const board = document.getElementById("letterBoard");
