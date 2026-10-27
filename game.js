@@ -40,7 +40,9 @@ function createCards() {
                             "正解！次は「" + letters[nextLetterIndex] + "」";
                         card.classList.add("correct");
 
+                        card.addEventListener("transitionend", function() {
                         board.removeChild(card);
+                        });
                     }
                 } else {
                     if (timeLeft > 0) {
