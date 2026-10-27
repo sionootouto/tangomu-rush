@@ -33,7 +33,6 @@ button {
 .correct {
   transform: scale(0);
   transition: transform 0.2s;
-  opacity: 0;
 }
 
   
