@@ -41,7 +41,8 @@ function createCards() {
                         card.classList.add("correct");
 
                         card.addEventListener("transitionend", function() {
-                        board.removeChild(card);
+                        const element = document.querySelector('.correct');
+                            element.style.opacity = '0';
                         });
                     }
                 } else {
